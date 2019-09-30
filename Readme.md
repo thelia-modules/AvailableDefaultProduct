@@ -16,5 +16,5 @@ and sets the first one in stock as the default one.
 Add it in your main thelia composer.json file
 
 ```
-composer require your-vendor/available-default-product-module:~1.0.0
+composer require thelia/available-default-product-module:~1.0.0
 ```

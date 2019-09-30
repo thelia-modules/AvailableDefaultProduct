@@ -20,7 +20,7 @@ class CheckDefaultAvailability extends BaseAction implements EventSubscriberInte
     public function checkDefaultAvailability(OrderEvent $orderEvent) {
 
         /** We only want order in statud paid. Exits the method if not */
-        if ($orderEvent->getOrder()->getStatusId() != OrderStatusQuery::create()->findOneByCode('paid')->getId()) {
+        if ($orderEvent->getOrder()->getStatusId() !== OrderStatusQuery::create()->findOneByCode('paid')->getId()) {
             return ;
         }
 

@@ -4,39 +4,24 @@
         xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_2.xsd">
     <fullnamespace>AvailableDefaultProduct\AvailableDefaultProduct</fullnamespace>
     <descriptive locale="en_US">
-        <title>Automatically generated module - please update module.xml file</title>
-        <!--
-        <subtitle></subtitle>
-        <description></description>
-        <postscriptum></postscriptum>
-        -->
+        <title>Changes the default product to an available one if the actual default product is out of stock</title>
     </descriptive>
     <descriptive locale="fr_FR">
-        <title>Module généré automatiquement - éditez le fichier module.xml</title>
+        <title>Change le produit par défaut par un produit disponible si celui par défaut actuellement n'est plus en stock</title>
     </descriptive>
-    <!-- <logo></logo> -->
-    <!--<images-folder>images</images-folder>-->
     <languages>
         <language>en_US</language>
         <language>fr_FR</language>
     </languages>
-    <version></version>
+    <version>1.0.0</version>
     <authors>
         <author>
-            <name></name>
-            <email></email>
+            <name>Luc Normandon</name>
+            <email>lucnormandon@openstudio.fr</email>
         </author>
     </authors>
     <type>classic</type>
-    <!--
-    module dependencies
-    <required>
-        <module version="&gt;=0.1">Front</module>
-        <module version="~1.0">HookCart</module>
-        <module version="&gt;0.2">HookSearch</module>
-    </required>
-    -->
-    <thelia>2.2.0</thelia>
+    <thelia>2.3.4</thelia>
     <stability>other</stability>
     <mandatory>0</mandatory>
     <hidden>0</hidden>

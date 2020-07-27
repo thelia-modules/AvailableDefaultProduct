@@ -1,6 +1,6 @@
 # Available Default Product
 
-Change default product sales when it run out of stock.
+Change default product sale elements when it run out of stock.
 
 When an order is put in status 'Paid' (it must have a status code of 'paid' which is the one by default)
 the module checks the product sales elements stock, if he is no longer in stock it checks for other variations of the product

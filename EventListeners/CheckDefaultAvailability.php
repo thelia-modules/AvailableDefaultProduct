@@ -4,23 +4,27 @@
 namespace AvailableDefaultProduct\EventListeners;
 
 
+use Propel\Runtime\Exception\PropelException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Thelia\Action\BaseAction;
 use Thelia\Core\Event\Order\OrderEvent;
 use Thelia\Core\Event\TheliaEvents;
 use Thelia\Model\CartItem;
 use Thelia\Model\CartItemQuery;
-use Thelia\Model\CartQuery;
 use Thelia\Model\OrderStatusQuery;
 use Thelia\Model\ProductSaleElements;
 use Thelia\Model\ProductSaleElementsQuery;
 
 class CheckDefaultAvailability extends BaseAction implements EventSubscriberInterface
 {
+    /**
+     * @throws PropelException
+     */
     public function checkDefaultAvailability(OrderEvent $orderEvent) {
 
-        /** We only want order in statud paid. Exits the method if not */
-        if ($orderEvent->getOrder()->getStatusId() !== OrderStatusQuery::create()->findOneByCode('paid')->getId()) {
+        /** We only want order in status paid. Exits the method if not */
+        if ($orderEvent->getOrder()->getStatusId() !== OrderStatusQuery::create()->findOneByCode('paid')->getId())
+        {
             return ;
         }
 
@@ -51,7 +55,7 @@ class CheckDefaultAvailability extends BaseAction implements EventSubscriberInte
         }
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return array(
             TheliaEvents::ORDER_UPDATE_STATUS => array("checkDefaultAvailability", 128)

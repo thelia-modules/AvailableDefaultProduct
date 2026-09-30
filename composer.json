@@ -1,11 +1,24 @@
 {
   "name": "thelia/available-default-product-module",
-  "license": "LGPL-3.0+",
+  "description": "Changes the default product sale elements to an available one when the current default runs out of stock",
+  "license": "LGPL-3.0-or-later",
   "type": "thelia-module",
   "require": {
-    "thelia/installer": "~1.1"
+    "php": ">=8.3",
+    "ext-dom": "*",
+    "psr/log": "^3.0",
+    "thelia/installer": "^1.6"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpunit/phpunit": "^11.5"
   },
   "extra": {
     "installer-name": "AvailableDefaultProduct"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AvailableDefaultProduct\\Tests\\": "Tests/"
+    }
   }
 }
